@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-eval';">
+    <title>La Nación del Ajolote: El Gran Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="game-background">
+    <h1 class="game-title-fixed" style="color: deeppink;">El Rincón del Ajolote</h1>
+
+    <div class="scores-fixed">
+        <p class="score-display">Jugador 1: <span id="scorePlayer1">0</span> puntos</p>
+        <p class="score-display">Jugador 2: <span id="scorePlayer2">0</span> puntos</p>
+    </div>
+
+    <div class="game-wrapper">
+        <div class="axolotl-decoration axolotl-top-left"></div>
+        <div class="axolotl-decoration axolotl-bottom-right"></div>
+
+        <img src="data:image/webp;base64,UklGRlwSAABXRUJQVlA4IFASAABwdQCdASoWAbQAPp1EnEmlo6KtKpU8EaATiWVtXFvUL+1Mn2BdeAMzy77uKZJdj/PH+G39xL7/LzFR/AKCsTlJsjFlU3ws3gZuOh/R8y4qJ3+byzZ0pymPk5JoaU8lfRjIRoNWq2k6nW1LyN0l9S03XnfXXfv7Eo4AHx1yAylqmMMopSEFQ79LC1CXOlM+YkiQTJkmeakALmcBArcY5FSrdUAdTl1y0QyAkZa7B+uBLWzFZihyWT2mw3gCtTMQrZh0ww/SQTRfOdn1F+ZWRWikDwoH+452qQVtBhF3YOb5SgpT+lr9Zwk7cbJLpH8vd6dPFXESOAZUy3PW2YT1iaMJerVrf8FL8D4r6YM8kUDqh2Ne16xd/spHRHeD4L/joxY3phj/0UZp5TUm4w/V/qyOHaKKFjCfVCYWYHr59DNjAVMdsU8DvKPuK5DzxYySo+DTWeedjCy6cVMZfD3quU92yahljX3csDcKosK+w1I+ERo/D4Xy8LgShNoFc6bk4V4iodzNh9dFrN29fgTnC5pjZ/1sdseDEFro+PUHUBkS6933837E4eOskF+4ktI7ZChl+9wZhpqwlVCitDZM31YbVzZtG5egRJpoPkgyhk5Cj2/jcF/b43pkDoGwqDf5HeRvnP9Qw3ZArR9Fv30d5HuDS3PV5zJ9zn5ilaXS4+eUROKiX+mi072sho0dGPUV0lhFyNKVFql9RZBkD7n0nnZe7j2i8L3bWKAw1WXupzVAl5s16F1uxGZc2gmQg0YZwV61wPp31bvTRKxuVFjUxnfv6smqFAWtoIkj4xn83Y0BM6mSHeHnVcygVkO3+X7lTGeZeb/hvqdKiSLd0JNjLj7w7CWVcsncYnl3EJqVswvu69NlfYw7nrAJYTiiZOBVamYg45Vi2AfkMrYLYJTR/LqYgHcRCFNjnKo1ikGC0RKhaRJYvKuFWCI6+zfiLAKII+u4KXkbP+YXIt23IaCouwLwxlGsH5juFG2hXUJ41esLcoQGxwyJACJdxAG/AbpXBor+0xx7i0MXBG1/Jkitv3HzYF8wksLj8TQb2CzuHRZghu5vaB+AQZDpDiRBmmMZ4v1d4DptElpgK0cY2acyT907fw1chwMGaJP+nfmpLEKCr5+etg4hM9VDmSImV4+mydBo6E5+/gOaxzbCZxnriZSnm1vZaRptmw0+Y2kQ5qJqmOhVsadHRfP0CakESeikLeOZ2A9TjLv7RO/eM94wlTHuGUzyUTQs5VCtAzeQAZbJf6mvPgAA+BEkE4NoFlmEHei8h7rnXO4me8L2WWlQAaYeKJEp5aL1ijnQ8MxNzyHP1LNzY3HjOrj93mAbewpGj4qbjdh5ej5up1LAyMGxgSaJAPvGvwpWl/HXCwTV/jjJL5cGVMIsBzGWFXEqGQT4EpMbGwXtaJFWOIRYBcOlxMHbai2yGnm1TfoOFEwrMfyoc9CpOt9yXOxHGDRG+/Q8Q630hnsyNpxiEEMGMubvR7MUXq1kVdk0LVS0/OCqWFfi7wqf4koh9WPCyDnRhrPn/Iv3KyyfY7aI/tfhGONLC+tZAqX72q6B0CK3dvZLtclzqf5B8LJiDz8DPn23XLSX8b2ASNBKjvdF+MPV3eB1q9sRCX+5YtYT0pbT9wLpP6aI5pUrodU7rnSDH1IrTo00jIA1l4SKz9ujg+I9zKRs2pqkql6tTLXbNTJ/bl/TSgK0CfZGdY/88b75xZLNK2/tFKGKEurw8OsPLt8ma0vBFW81bYgoqXLv+GvTxtjDzButLPMMOkQV6LkCCpsFqFF+EbvzYzWLvrzw8k7Pa+RKWo/mQ2iqF/dQGTfhTK8V7DYqnopLRo0pxxl6VIY6ghg3T0A+Ws/g01AmGjQ6VQugsGGgKdYYWK3tY+Ou9qeI3lRKFvLz5XoqytuYjrPFfpgUGTipU9lMF3Ib7MkGpDLhAlGOCntD2Y/J81wqDDshepqwdHc+AGiUJ8QHkxturQNh+TMNktMxMxJlgYQVtunGfLJD78tUd6mFX0n79xgSqt/m8oaZwPZLwWPAvMNDPa/byCoF+2rkrjC8YOrfmcH4QaUEGIjbH0dZxbxMpGFbZlzhG5Ovzc+2tmwS5Vf1Iyv4MByv3NOmwcTulHXWuAUcvSyptNyq8nL5yhJTkYtBlTGLp7qQkKAi1dGQFvZYVi36iwOFTVHeXsi243GFKtiieyPjDi8g1KpjWlPMg05/+fWqAfeOGcOJRm43qBQhO7U1v/fKAHH0fDdNsVwUI/kx9MadiHH6YaBK/bAH6FEp4zwic0e4tCjb/YcshbgxDETIBAkIWtciE89sOPKZI07sC42XTPdP6xQBIHbZfxHfXaRON8BchjTH2H7mPMMekwTf8MM7zILXb/7jUBA3qaQC+jlspFLLHqhECx+hOuhTGV8SSA5dV2sCMb1qCUOSGjjOXuEdAsZn8I0L72+TiJboHPQ+EJmtEGv5SCP3W6CH6puJdr99N/L4I7Gh5E/Y8HwhploCsHHDO6AEZyZLs1DM0+sxKFs/RIH9Mx/69CQGJFGnJk0P8or31h7kt9afcRo90qeGqMs1D+cnV0qN9MSWdcbIjNjafMUP5rtYLx2xoASry3471YOJUMwWTlIDolIMlbAXuPtsexD6L6VwiQiwoPznsWm0/Z0mCfJ1LuDhGSGFMZIZp9s+HkCr1oK30KVrm8xc37Kk5od49oWlRnTds/JRp1btG4KfFNpsxcGJITLOD8FCJVsCceE5e3ip6zDmhYTJ9tElVuDxUyvaTmfw9NzJyOeryXREeA1l9IV5h92efhNNtIwnWzmwxWg6kLcBwsPuGkY8USha2CDDC6T3kq3qksphj7r+NEqMDxEzj30kNPcJXfkVjFa8KmwuitHhUsC4+E8Rmm4MJb19BkZPb9Ft8iGFZwe+8vyS8j0Fp34EFMoMd7rkY77OqO3ln41N/e3AKYjRIBPj5peT0+9RhMTN1mICARgaupyggr0wPUZv5o6XzyhXSG7zPcP/hYIjF2EvtxdaCOOdFNkuc3aIM2XETs6dgmxuZp3PAZZ+0gGF7zVAzhqUp7SOsR2EyhJGvKrRj0eL9tjqdFUzRJJvYdfrFYoK8WX2UCzQEfcgcg9Mr+vtQu4pozbeeL5ce+/ag+WjYO2I3TrzykyajlCRbo+mr33ruecT2ttZpHDsHV5RGEEXnpe1bAe2lmB/Vx2sBHINkNA7fRtLUi1Bj11jC2SELo4EdW+7NNRlcK5FN+FpM4wG3eIFrF/oAeND/b7FaHKrf+NHhWWnTEPKmCfD5zgCG5PIZV8HlO1LBAqqcb5+TTo+b75UFX8sOLBhwxXJ3mna0qpnGKC9OTte11eGsT20PG/71om83Ie4c89Dx+RvL6WnQgOuN1dLyu6ZCMLEB7c6EElU+eKqeqE58pbkndBtXNLWKjH/dd0iDdTC1QNDq4+U7JAQLCVVqz4BZMykBwO1EuavqDaZGLEonjEz4hgJSuWG+odxOBhs+ajTHBAn8usEFkhVr4v0LLNHKA2bIPzJFZk4IomTcTBqqQRZ4GnA6E7Mx+tIL5jNcWBzRQnVFL+8E2evQg7erMSCtSDE6Ex17i0FvCmOuZyYNqOn3+E9ZOl1BDNZAmASwi2YWU9n0+yIQoeRjtxBeWxifEaiQpH4/J2M5ImynyT7Tk7v/FMfqhKXFRVv5Hffx1GZgMQWpq2isSWh5nchWSLo91/a8FIVwrEtZfbfvKku1wtd4z9K/XrOHziPqGXRWRT87iA140ags3T0PhbrMUL0lmgsh50vT2Vt4mqumOQVw6hR7OAj4ucQF2ksff7TndfEjqfknULD3EeD+fjADeLi/d3/MeGeYPDJ7qTqrmbG4QcMYQOB8zhRexZZCW0DAkMtS/ENIwyuVYwQUBPCiqUBDmAVz7aDxS5qvKBhhRggenyQC1YsF/4VviqMQuDwJFU5efiaKoviZdO8E+0Wp/QyaVv/VljBNLRaCE2mQ1tT4uLk4MnuNCkjY8VQkXGm7bjPpydrdZ4v/MLq0TR8gNxjoMxAQKvl4hm0cZ1VtvbVDfGCmj2uhQKea1xmrA/6C4uD9fca9OmbChPxy1Eiu29n2KHcazk3fcIY1fi7B3lFZN93CMnHC8KpcCPivwWom6bxJOOEBlr61hQYuTWgXRuBK0Jb2HnZadGLjddpB/OfFrpdN82Jn2BeNONjV0wUoxNW3mdctk7oVJtzQ6VbllNWIbdrc8WO3PA7dSLBoumsl0dKBESD7u0tDa1WSD3TYlOug3VKRzW4E4wIojp2xBGhLTwA+ykv6cGVhFZJz4uAKv63mvD4b+JOdIHHks298BL3W4ucdRhNLVHUKJzxpLLzUcjjFzsU1dVp2PcpTOlRyVtbGs0K8QewiYzjfch2VkzopqyXo0b08+K5/HMz6ws++67T15ocxV6aQ/O6YlDFDEKqQpMuCsscTrQIghU3G3Lwkg0velRwYyM+LktS0XOYwbRmCjStZ/apXYHm5AGOudVD8v4I3M6Jr1PCUexSvI1TX6Y/KySaHYNuEXKFNiiTVQ8hQlwIzOw8CHZNaCsrhNzyjFO8SixwpPRQFJOMDHAaLBeaxOGfIvCoGDWcP5Z4jWquScW9acRHeWZ2Greqp8EK3j7HDgy8oFHW5x1z44dDhj1D3HMZKt1PN4rsROqAuvrgMi5jeOu7ioYwX24vcD+DilXhusdO0/4se/kCtKeifUn9ZxCwp371w9v8xfjhTGk3/nzjgF/Kn505itpKEBustuUklV8mwkEP4vChJNu/Om2vIrYXvRVwzaoCKNZsSQTbhUx2ezy07uQm4S9ztiFQtN1KU1L3UxjiUp98tnFLYszP09VQasFowQgfz74uWhpDj6cbOI7K/4G0E1+LCrpn0lCgAUL7NmOdYIxnKUmA2ZubqgA2BLDbm3O9i4B1liFrp1aYUnXdlnOHYiEBKTwIIM1jRlPhbGOADmawJCY4CCqvWYjEzW6IQUR3vvdGrvpxTdY5iPn0RjRy18CB8Dyv4czwXKh0EDuHabTlHfKk8AMpKAwPvR00NkLls2eeqDjGzJ4JWZO3/dSzwDc7WkXoUqR4MSR6KRGwwNK4+8jLOYFsThRv77G5ernouku98jq+es8GoCrusLP7UWeamzxhlW+cRA8/1BsUIk+L6AWZJ8AAPBc2K5o8BmQyVkSFXQXeuvBAu9hX5ixIhYznz1ZC5iLqXELPjFRqHoM29ERzVu8WhbrJ/F8RvI23jgTPY+2wwDDYbIOc7kn6aeeolUDq0VDfLHgAGEP+TuWDPWspzE7/ev2oGpokpHXKgZXorSa6nKiRDwXB+lwHOIpjp/X6PKh81g4tfBZPCnc4I/TSZdoRb+ivO/Ej3MBhg52yifJohnd8A4bUf8jIHLSiCvH5qsxlkTLuQ+UJc4B5ugjmNA5wwGmzt0ejZkIz/4Li1FftDjkZ7kh8ZuvILQFwdfsj6cn6E23p+W8L8r/RvHw1YudpTEUho76iRBS3qU8OEpum8JAP2bV+rPpxWflP/7axM/ZGoElXIveQhKqnx9wYwE08yueBtFca2yK7IEQJy3vvpg08qZHfJ2072VJPj5OQ8g3mrj1FZPAOYyFC5rFYMFe+Nbp5xNYvPIqwY5Ec0PyXCAAm3ySd1SI4fZpcU7p/iQ8GmlUxuxHyeGYEA17C3zRIpjy4QcrBVpYFudfhF8CaTaf+G+J7YJ8uHiOExI3mt6ZvYWS0TsB3j9dNK+Z3ezZlY34NavSKV1B+15xq6Zbkey28c4zT+Q2vRsNxtvAyB2BN6lOoe9SOC1aQH1GSfOXqOBNNHMK7JUyJVezi1FHG9SxoHTioq5ONOK5TvalP9msuiCsT4fwA3sRn+v1E2qFwDeeL4xorDODXGlDWPyLsq8f0Srfhi/D5M7cy+TTlxUxRAcMIVskD9fgXeUJFJ3TJyGZQTT0n8ENOqDlHmx1byeDkJ0Us0o/5HLw7jdNsJZiqPF1MQ5PM/TdQyv8LwBgqXyDQICxNi/u3i06tUqGSEsiBaJOCU1lYUutDCqj0VgrGHDL3lKI8jYZYCeHXsQygQmkMa/STa510abArr/mCT5shZS39AycdJJdwZyO37ATx6zXHGql8z7H5UUbTJ9iYP4qVctDGiAfdVAz9UO8SrFFRmr6lF08xB/LYaonJhjVALRjAuX7yIOeVoEyIw0lTsg4ld/mnK4uzCLW+pIzfKs7eAGvfxzOugP8cK6v3oJYDjALYG9Z72Q920WTcAAAAAA==" alt="900" height="900">
+
+        <div id="start-screen" class="screen active">
+            <h2 class="screen-title">¡Bienvenido a La Nación del Ajolote!</h2>
+            <p class="intro-text">Pon a prueba tus conocimientos y diviértete con tus amigos.</p>
+            <button id="startGameBtn" class="action-btn">Comenzar</button>
+        </div>
+
+        <div id="category-selection" class="screen">
+            <h2 class="screen-title">Selecciona una Categoría</h2>
+            <p class="player-turn-info">Turno del Jugador <span id="currentPlayerTurn">1</span></p>
+            <div class="categories">
+                <button class="category-btn" data-category="historia">Historia</button>
+                <button class="category-btn" data-category="ciencia">Ciencia</button>
+                <button class="category-btn" data-category="geografia">Geografía</button>
+                <button class="category-btn" data-category="arte">Arte</button>
+                <button class="category-btn" data-category="deportes">Deportes</button>
+            </div>
+        </div>
+
+        <div id="question-screen" class="screen">
+            <h3 id="currentCategoryTitle" class="screen-subtitle"></h3>
+            <p class="question-text" id="questionText"></p>
+            <div class="options">
+                <button class="option-btn" data-option="a"></button>
+                <button class="option-btn" data-option="b"></button>
+                <button class="option-btn" data-option="c"></button>
+                <button class="option-btn" data-option="d"></button>
+            </div>
+            <p id="feedbackMessage" class="feedback-message"></p>
+        </div>
+
+        <div id="final-score-screen" class="screen">
+            <h2 class="screen-title">¡Juego Terminado!</h2>
+            <p id="finalScoreText" class="final-score-text"></p>
+            <p id="winnerText" class="winner-text"></p>
+            <button id="restartGameBtn" class="action-btn">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
